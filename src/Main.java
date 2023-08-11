@@ -37,7 +37,7 @@ public class Main {
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             System.out.println("Время доставки составит " + (day + 2) + " дня");
         } else {
-            System.out.println("Доставки нет");
+            System.out.println("Извините, доставка в Ваш город не осуществляется");
 
         }
     }
