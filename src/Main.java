@@ -28,16 +28,15 @@ public class Main {
             System.out.println("Установите обычную версию приложения для Андроид");
         }
     }
-    public static void determinationOfDeliveryTime(int deliveryDistance) {
-        int day = 1;
-        if (deliveryDistance < 20) {
-            System.out.println("Время доставки составит " + day + " день");
+    public static int determinationOfDeliveryTime(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
+            return 1;
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Время доставки составит " + (day + 1) + " дня");
+            return  2;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Время доставки составит " + (day + 2) + " дня");
+            return 3;
         } else {
-            System.out.println("Доставки нет");
+            return 4;
 
         }
     }
@@ -66,7 +65,13 @@ public class Main {
         System.out.println("Введите расстояние до вашего города");
         Scanner sc1 = new Scanner(System.in);
         int deliveryDistance = sc1.nextInt();
-        determinationOfDeliveryTime(deliveryDistance);
+        int deliveryDays = determinationOfDeliveryTime(deliveryDistance);
+        if (deliveryDays == 4) {
+            System.out.println("Доставка в ваш город невозможна");
+        } else {
+            System.out.println("Потребуется дней " + deliveryDays);
+        }
+
 
 
     }
